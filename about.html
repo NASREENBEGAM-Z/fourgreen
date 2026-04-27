@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Four Green Realty</title>
+    <meta name="description"
+        content="Learn more about Fourgreen India, a professional enterprise led by Managing Director Arshath.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .about-section {
+            padding: 5rem 5%;
+            min-height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-container {
+            max-width: 1000px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+        .about-content {
+            text-align: left;
+        }
+        .about-content h1 {
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .owner-profile {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .owner-image {
+            width: 150px;
+            height: 150px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent-color);
+        }
+        .owner-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .owner-info h3 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-bottom: 0.2rem;
+        }
+        .owner-title {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .owner-desc {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+            .owner-profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-content {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="ph-fill ph-buildings"></i>
+            <div class="logo-text">
+                <span class="company-name">Four Green</span>
+                <span class="company-sub">Realty</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="#" id="nav-buy-sell">Buy & Sell</a></li>
+        </ul>
+        <a href="#" class="btn-primary nav-contact">Contact</a>
+        <button class="mobile-menu-btn">
+            <i class="ph ph-list"></i>
+        </button>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <span class="subtitle">KNOW MORE ABOUT US</span>
+                <h1>Business Profile: Fourgreen India</h1>
+                <p>Fourgreen India is a professional enterprise led by Managing Director Arshath. Based in ECR, we are dedicated to providing high-quality services and solutions tailored to our clients' needs. Our commitment to excellence is reflected in our streamlined operations and our focus on building lasting professional relationships.</p>
+                <p>We specialize in modern villas, luxury apartments, and beach houses across the prime locations of ECR, ensuring our clients find their perfect property.</p>
+            </div>
+            
+            <div class="owner-profile">
+                <div class="owner-image">
+                    <img src="assets/owner_arshath.jpeg" alt="Arshath - Managing Director">
+                </div>
+                <div class="owner-info">
+                    <h3>Arshath</h3>
+                    <p class="owner-title">Managing Director</p>
+                    <p class="owner-desc">With a passion for real estate and years of expertise in the ECR market, Arshath leads Fourgreen India with a vision to revolutionize property buying and selling. His hands-on approach ensures that every client receives personalized and premium service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="buy-sell-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal"><i class="ph ph-x"></i></button>
+            <h2 id="modal-title">Property Requirement</h2>
+            <form id="property-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="property-type">Property Type</label>
+                    <select id="property-type" required>
+                        <option value="" disabled selected>Select property type</option>
+                        <option value="villa">Villa</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="plot">Plot / Land</option>
+                        <option value="commercial">Commercial</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="e.g. ECR, Panaiyur" required>
+                </div>
+                <div class="form-group" id="budget-group">
+                    <label for="budget" id="budget-label">Expected Budget</label>
+                    <input type="text" id="budget" placeholder="e.g. 2 Cr" required>
+                </div>
+                <div class="form-group">
+                    <label for="details">Additional Details</label>
+                    <textarea id="details" rows="3" placeholder="Any specific requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary submit-btn" style="width: 100%; margin-top: 1rem;">Submit Details</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Modal Overlay -->
+    <div class="modal-overlay" id="contact-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-contact-modal"><i class="ph ph-x"></i></button>
+            <h2 id="contact-modal-title">Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="contact-name">Full Name</label>
+                    <input type="text" id="contact-name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email Address</label>
+                    <input type="email" id="contact-email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-phone">Phone Number</label>
+                    <input type="tel" id="contact-phone" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" rows="4" placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary submit-btn" style="width: 100%; margin-top: 1rem;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem;">
+        <p style="color: var(--text-muted); font-size: 1rem;">&copy; 2026 adsgomedia. All Rights Reserved.</p>
+        <p style="color: var(--accent-color); font-size: 0.9rem; margin-top: 0.5rem;">Designed by Jaffar Ali</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
